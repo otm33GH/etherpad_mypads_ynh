@@ -111,7 +111,7 @@ ynh_systemctl --service="$app" --action=restart
 if [ $mypads -eq 1 ]
 then
     ynh_replace --match="__LANGUAGE__" --replace="$language" --file="../conf/lang_mypads.sql"
-    ynh_mysql_db_shell < "../conf/lang_mypads.sql"
+   # ynh_mysql_db_shell < "../conf/lang_mypads.sql"
 
     ynh_systemctl --service="$app" --action=restart
 fi
