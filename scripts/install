@@ -107,7 +107,7 @@ ynh_config_add_fail2ban --logpath="/var/log/nginx/$domain-access.log" --failrege
 ynh_script_progression "Starting systemd service..."
 
 ynh_systemctl --service="$app" --action=restart
-
+    sleep 30
 if [ $mypads -eq 1 ]
 then
     ynh_replace --match="__LANGUAGE__" --replace="$language" --file="../conf/lang_mypads.sql"
