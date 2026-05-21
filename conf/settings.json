@@ -536,7 +536,7 @@ __COMMENT_IF_LDAP_DISABLED__    },
    * The other effect will be that the logs will contain the real client's IP,
    * instead of the reverse proxy's IP.
    */
-  "trustProxy": false,
+  "trustProxy": true,
 
   /*
    * Settings controlling the session cookie issued by Etherpad.
@@ -949,21 +949,21 @@ __COMMENT_IF_LDAP_DISABLED__    },
   "lowerCasePadIds": false,
 
   "sso": {
-    "issuer": "${SSO_ISSUER:http://localhost:9001}",
+    "issuer": "${SSO_ISSUER:https://__DOMAIN____PATH__}",
       "clients": [
         {
           "client_id": "${ADMIN_CLIENT:admin_client}",
           "client_secret": "${ADMIN_SECRET:admin}",
           "grant_types": ["authorization_code"],
           "response_types": ["code"],
-          "redirect_uris": ["${ADMIN_REDIRECT:http://localhost:9001/admin/}"]
+          "redirect_uris": ["${ADMIN_REDIRECT:https://__DOMAIN____PATH__/admin/}"]
         },
         {
           "client_id": "${USER_CLIENT:user_client}",
           "client_secret": "${USER_SECRET:user}",
           "grant_types": ["authorization_code"],
           "response_types": ["code"],
-          "redirect_uris": ["${USER_REDIRECT:http://localhost:9001/}"]
+          "redirect_uris": ["${USER_REDIRECT:https://__DOMAIN____PATH__/}"]
         }
       ]
     }
