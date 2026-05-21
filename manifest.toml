@@ -33,9 +33,9 @@ ram.runtime = "50M"
     [install.domain]
     type = "domain"
 
-    [install.path]
-    type = "path"
-    default = "/pad"
+   # [install.path]
+   # type = "path"
+   # default = "/pad"
 
     [install.init_main_permission]
     help.en = "If your Etherpad instance is set to Visitors, everyone will be able to create a pad or see an existing one."
