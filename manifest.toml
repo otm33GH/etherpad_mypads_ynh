@@ -33,10 +33,6 @@ ram.runtime = "50M"
     [install.domain]
     type = "domain"
 
-    [install.path]
-    type = "path"
-    default = "/pad"
-
     [install.init_main_permission]
     help.en = "If your Etherpad instance is set to Visitors, everyone will be able to create a pad or see an existing one."
     help.fr = "Si votre instance Etherpad est définie sur Visiteurs, tout le monde pourra créer un pad ou en voir un existant."
