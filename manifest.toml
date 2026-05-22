@@ -52,12 +52,12 @@ ram.runtime = "50M"
     [install.password]
     type = "password"
 
-    [install.mypads]
-    ask.en = "Do you want to install MyPads plugin?"
-    ask.fr = "Voulez-vous installer le plugin MyPads ?"
-    help.en = "<a href=https://git.framasoft.org/framasoft/ep_mypads target=_blank>MyPads plugin</a>"
-    type = "boolean"
-    default = true
+#    [install.mypads]
+#    ask.en = "Do you want to install MyPads plugin?"
+#    ask.fr = "Voulez-vous installer le plugin MyPads ?"
+#    help.en = "<a href=https://git.framasoft.org/framasoft/ep_mypads target=_blank>MyPads plugin</a>"
+#    type = "boolean"
+#    default = true
 
     [install.useldap]
     ask.en = "Do you want to use LDAP with MyPads?"
