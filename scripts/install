@@ -54,7 +54,7 @@ ynh_script_progression "Installing $app and plugins..."
 pushd "$install_dir"
 	ynh_hide_warnings corepack enable && COREPACK_ENABLE_DOWNLOAD_PROMPT=0 corepack prepare pnpm@latest --activate
     ynh_hide_warnings ynh_exec_as_app pnpm install
-    ynh_hide_warnings ynh_exec_as_app pnpm run build:etherpad
+#    ynh_hide_warnings ynh_exec_as_app pnpm run build:etherpad
     chown -R $app:$app ./node_modules
     ynh_hide_warnings ynh_exec_as_app pnpm run plugins install \
     	ep_align@${ep_align_version} \
@@ -66,6 +66,7 @@ pushd "$install_dir"
    # if [ $mypads -eq 1 ]; then
    #     ynh_hide_warnings ynh_exec_as_app pnpm run plugins install ep_mypads@${mypads_version}
    # fi
+    ynh_hide_warnings ynh_exec_as_app pnpm run build:etherpad
 popd
 
 #=================================================
