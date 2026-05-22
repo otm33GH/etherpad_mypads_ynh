@@ -38,7 +38,7 @@ ynh_script_progression "Configure $app..."
 
 # Use LDAP for MyPads
 comment_if_ldap_disabled="//ldap_disabled"
-if [ $mypads -eq 1 ] && [ $useldap -eq 1 ]
+if [ $useldap -eq 1 ]
 then
     comment_if_ldap_disabled=""
 fi
@@ -109,13 +109,13 @@ ynh_script_progression "Starting systemd service..."
 
 ynh_systemctl --service="$app" --action=restart
     sleep 30
-if [ $mypads -eq 1 ]
-then
+#if [ $mypads -eq 1 ]
+#then
     ynh_replace --match="__LANGUAGE__" --replace="$language" --file="../conf/lang_mypads.sql"
     ynh_mysql_db_shell < "../conf/lang_mypads.sql"
 
     ynh_systemctl --service="$app" --action=restart
-fi
+#fi
 
 #=================================================
 # END OF SCRIPT
